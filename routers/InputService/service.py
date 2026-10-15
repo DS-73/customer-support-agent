@@ -6,7 +6,10 @@
 
 '''
 
-@app.post("/query")
+from fastapi import APIRouter
+router: APIRouter = APIRouter()
+
+@router.post("/query")
 def get_input(request):
     '''
         Process the user request

@@ -22,7 +22,6 @@ embedding = OpenAIEmbeddings(
     show_progress=True
 )
 
-
 def document_loader(): 
     '''
         Loading all documents from our Blob storage to add them to our knowledge base(vector DB).
@@ -70,7 +69,10 @@ def update_database():
     '''
     pass
 
+
+# If already exist update if anything new 
 if database:
     update_database()
+# Create database with documents
 else:
     create_database()

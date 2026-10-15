@@ -10,11 +10,15 @@
 
 from build_agents import support_agent
 from utils.chat_history import ChatHistoryManager
+from fastapi import APIRouter
 
 # Building Agents
 agent = support_agent
 
-@app.post("/process_query")
+
+router: APIRouter = APIRouter()
+
+@router.post("/process_query")
 def process_query(user_query):
     '''
         Based on the user query route it to domain specific agent
